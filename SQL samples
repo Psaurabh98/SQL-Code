@@ -1,0 +1,33 @@
+/*Write a query to create a summary of orders placed by customers on an ecommerce site with the requirements below.
+•	How many orders has the customer placed in the entire history?
+•	What is the average value of orders placed by customers? 
+•	How many orders customer has placed which had order value more than 5000?
+*/
+
+--Script for creating Table
+
+create table AGRI (
+Customer_id int,
+Order_id int,
+Order_Value int,
+District Varchar(20),
+Visit_date date
+)
+
+insert into AGRI
+values
+(1351,51539,100023,'Rewari','2022-01-23'),
+(1572,52360,3498,'Hisar','2021-10-02'),
+(1572,53512,5670,'Hisar','2022-01-01'),
+(1157,50490,2312,'GTB','2020-05-09'),
+(1351,56060,200432,'Rewari','2021-03-07'),
+(1463,55285,417542,'Ahemdabad','2022-02-26'),
+(1969,55556,5353,'GTB','2020-10-23'),
+(1351,51268,8731,'Rewari','2021-06-02')
+
+--Below written are the sql code
+
+Select Customer_id,Count(Order_id)as CN,AVG(Order_Value) as Average_order_Value,Count(Case when Order_value>5000 then 1 end) as An
+from AGRI
+GROUP BY Customer_id
+Order by CN desc;
