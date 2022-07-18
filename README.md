@@ -1,1 +1,1 @@
-In this repository, in each file you will get the problem statement along with the code using which you can create table in your system and also there are sql script using which we can get desired output
+In this repository, in each file you will get the problem statement along with the code using which you can create table in your system and also there are sql script using which we can get desired output.
